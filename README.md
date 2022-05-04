@@ -6,6 +6,25 @@ The scale ambiguity and origin placement problems inherent to SfM are overcome u
 
 Blender simulation scenes are provided and used to demonstrate the proposed solutions.
 
+The dependencies are described in BUILDING/docker-colmap-fresh-ubuntu16.txt and BUILDING/docker-openmvg-fresh-ubuntu16.txt. Alternatively, use the following commands to run a docker container containing all the dependencies to run the project (recommended):
+
+***colmap***
+```
+docker pull masrim2000/colmap:latest
+docker run -w /working -v c:\Users\masri\working:/working -e "TERM=xterm-256color" --gpus=all -e "DISPLAY=$((ping -n 1 host.docker.internal | findstr /c:Reply) -Split '[: ]' | findstr /c:.):0" -it masrim2000/colmap:latest
+```
+
+***openMVG & openMVS***
+```
+docker pull masrim2000/openmvgmvs:latest
+docker run -w /working -v c:\Users\masri\working:/working -e "TERM=xterm-256color" --gpus=all -e "DISPLAY=$((ping -n 1 host.docker.internal | findstr /c:Reply) -Split '[: ]' | findstr /c:.):0" -it masrim2000/openmvgmvs:latest
+```
+
+***Note: For the project to run correctly, a specially modified version of openMVG must be used:
+```
+https://github.com/masrim2000/openMVG.git
+```
+***
 
 # Method 1: Registration using known poses (using colmap)
 
@@ -70,7 +89,7 @@ TODO
 
 ### 1. Extract images and poses
 
-This folder contains scripts to extract the images and camera poses and formats it such that its ready to be used in the next step (images.txt).
+This folder contains scripts to extract the images and camera poses then formats them such that they are ready to be used in the next step (images.txt).
 
 Usage:
 ```

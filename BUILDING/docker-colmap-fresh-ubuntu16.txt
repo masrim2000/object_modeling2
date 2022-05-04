@@ -1,0 +1,119 @@
+ENV TERM xterm-256color
+
+apt update
+addusr masri
+passwd masri
+mkdir /home/masri
+chown -R masri:masri /home/masri
+apt install sudo -y
+usermod -aG sudo masri
+su masri
+
+
+sudo apt-get install \
+    git \
+    cmake \
+    build-essential \
+    libboost-program-options-dev \
+    libboost-filesystem-dev \
+    libboost-graph-dev \
+    libboost-system-dev \
+    libboost-test-dev \
+    libeigen3-dev \
+    libsuitesparse-dev \
+    libfreeimage-dev \
+    libmetis-dev \
+    libgoogle-glog-dev \
+    libgflags-dev \
+    libglew-dev \
+    qtbase5-dev \
+    libqt5opengl5-dev \
+    libcgal-dev
+
+sudo apt-get install libcgal-qt5-dev
+
+sudo apt-get install libatlas-base-dev libsuitesparse-dev
+
+sudo apt remove cmake
+sudo apt purge cmake
+sudo apt install wget
+wget https://github.com/Kitware/CMake/releases/download/v3.23.1/cmake-3.23.1-linux-x86_64.sh
+chmod +x cmake-3.23.1-linux-x86_64.sh
+sudo mv cmake-3.23.1-linux-x86_64.sh /opt/
+cd /opt/
+sudo ./cmake-3.23.1-linux-x86_64.sh
+sudo rm /opt/cmake-3.23.1-linux-x86_64.sh
+sudo ln -s /opt/cmake-3.23.1-linux-x86_64/bin/* /usr/local/bin
+cd ~
+
+wget https://gitlab.com/libeigen/eigen/-/archive/3.3.9/eigen-3.3.9.tar.bz2
+tar -xf eigen-3.3.9.tar.bz2
+rm eigen-3.3.9.tar.bz2
+cd eigen-3.3.9
+mkdir build
+cd build
+cmake ../
+sudo make install
+cd ~
+sudo rm -r eigen-3.3.9
+
+#git clone https://ceres-solver.googlesource.com/ceres-solver
+#cd ceres-solver
+#git checkout $(git describe --tags) # Checkout the latest release
+#mkdir build
+#cd build
+#cmake .. -DBUILD_TESTING=OFF -DBUILD_EXAMPLES=OFF
+#make -j
+#sudo make install
+
+sudo apt-get install libboost-all-dev
+
+wget ceres-solver.org/ceres-solver-1.14.0.tar.gz
+tar -xf ceres-solver-1.14.0.tar.gz
+rm ceres-solver-1.14.0.tar.gz
+cd ceres-solver-1.14.0
+mkdir build
+cd build
+cmake ../
+make -j4
+sudo make install
+
+git clone https://github.com/colmap/colmap.git
+cd colmap
+git checkout master
+mkdir build
+cd build
+cmake ..
+make -j4
+sudo make install
+
+sudo apt install curl
+
+
+sudo apt update
+
+sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+
+cd ~
+wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
+sudo tar xzf Python-3.7.4.tgz
+sudo rm Python-3.7.4.tgz
+cd Python-3.7.4
+sudo ./configure
+sudo make
+sudo make install
+cd ~
+sudo rm -r Python-3.7.4
+
+echo "alias 'python3=python3.7'" >> .bashrc
+source .bashrc
+
+
+sudo pip3 install --upgrade pip setuptools wheel
+
+
+export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0
+export LIBGL_ALWAYS_INDIRECT=0
+cd ~
+
+

@@ -28,4 +28,4 @@ Otherwise, you can run a fresh ubuntu-16.04 and install all required dependencie
 docker pull masrim2000/ubuntu16:1.0
 docker run -it -v c:\:/mnt/c -e "TERM=xterm-256color" --gpus=all masrim2000/ubuntu16:1.0
 ```
-then follow the instructions in docker-colmap-from-scratch.txt or docker-openmvg-from-scratch.txt to install all requirements manually.
+then follow the instructions in docker-colmap-fresh-ubuntu16.txt or docker-openmvg-fresh-ubuntu16.txt to install all requirements manually.

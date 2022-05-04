@@ -1,8 +1,8 @@
 # object_modeling
 
-Scripts for generating 3D models using colmap & openMVG.
+Scripts for generating 3D models using colmap & OpenMVG.
 
-The scale ambiguity and origin placement problems inherent to SfM are overcome using known camera poses from the eye-in-hand system extracted from ROS tf data. Alternatively, a paradigm for using a QR-code with known world location is presented (using a modified version of openMVG).
+The scale ambiguity and origin placement problems inherent to SfM are overcome using known camera poses from the eye-in-hand system extracted from ROS tf data. Alternatively, a paradigm for using a QR-code with known world location is presented (using a modified version of OpenMVG).
 
 Blender simulation scenes are provided and used to demonstrate the proposed solutions.
 
@@ -15,7 +15,7 @@ docker pull masrim2000/colmap:latest
 docker run -w /working -v c:\Users\masri\working:/working -e "TERM=xterm-256color" --gpus=all -e "DISPLAY=$((ping -n 1 host.docker.internal | findstr /c:Reply) -Split '[: ]' | findstr /c:.):0" -it masrim2000/colmap:latest
 ```
 
-***openMVG & openMVS***
+***OpenMVG & OpenMVS***
 ```
 docker pull masrim2000/openmvgmvs:latest
 docker run -w /working -v c:\Users\masri\working:/working -e "TERM=xterm-256color" --gpus=all -e "DISPLAY=$((ping -n 1 host.docker.internal | findstr /c:Reply) -Split '[: ]' | findstr /c:.):0" -it masrim2000/openmvgmvs:latest
@@ -23,7 +23,7 @@ docker run -w /working -v c:\Users\masri\working:/working -e "TERM=xterm-256colo
 
 ***Note: For the project to run correctly, a specially modified version of OpenMVG must be used:***
 ```
-https://github.com/masrim2000/openMVG.git
+https://github.com/masrim2000/openmvg.git
 ```
 
 
@@ -63,9 +63,9 @@ then run the script using command: ./run.sh
 TODO
 
 
-# Method 2: Registration using QR-code (using openMVG)
+# Method 2: Registration using QR-code (using OpenMVG)
 
-Produces a sparse openMVG SfM model, registers it to the world coordinate system using a QR code with known world coordinates then performs a dense reconstruction using openMVS. Does not require camera calibration but depends on good detection and localization of a QR-code in the images.
+Produces a sparse OpenMVG SfM model, registers it to the world coordinate system using a QR code with known world coordinates then performs a dense reconstruction using openMVS. Does not require camera calibration but depends on good detection and localization of a QR-code in the images.
 
 Usage:
 ```
@@ -113,7 +113,7 @@ sudo chmod +x run.sh
 then run the script using command: ./run.sh
 ```
 
-### 2. Triangulation (openmvg)
+### 2. Triangulation (OpenMVG)
 
 This script generates a dense 3D reconstruction by triangulating matched SIFT features given camera poses and calibration parameters. Requires accurate poses and camera calibration.
 
@@ -151,7 +151,7 @@ sudo chmod +x run.sh
 then run the script using command: ./run.sh
 ```
 
-### 2. Triangulation (openmvg)
+### 2. Triangulation (OpenMVG)
 
 This script generates a dense 3D reconstruction by triangulating matched SIFT features given camera poses and calibration parameters. Requires accurate poses and camera calibration.
 

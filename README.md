@@ -20,11 +20,11 @@ docker pull masrim2000/openmvgmvs:latest
 docker run -w /working -v c:\Users\masri\working:/working -e "TERM=xterm-256color" --gpus=all -e "DISPLAY=$((ping -n 1 host.docker.internal | findstr /c:Reply) -Split '[: ]' | findstr /c:.):0" -it masrim2000/openmvgmvs:latest
 ```
 
-***Note: For the project to run correctly, a specially modified version of openMVG must be used:
+***Note: For the project to run correctly, a specially modified version of openMVG must be used:***
 ```
 https://github.com/masrim2000/openMVG.git
 ```
-***
+
 
 # Method 1: Registration using known poses (using colmap)
 

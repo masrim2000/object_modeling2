@@ -65,6 +65,8 @@ TODO
 
 # Method 2: Registration using QR-code (using OpenMVG)
 
+![](https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-input.gif)
+
 Produces a sparse OpenMVG SfM model, registers it to the world coordinate system using a QR code with known world coordinates then performs a dense reconstruction using openMVS. Does not require camera calibration but depends on good detection and localization of a QR-code in the images.
 
 Usage:

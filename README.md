@@ -1,4 +1,4 @@
-# object_modeling
+# Visual 3D Reconstruction
 
 Scripts for generating 3D models using colmap & OpenMVG.
 
@@ -113,7 +113,7 @@ replace data/images with your images
 replace data/known/images.txt with your poses
 replace data/known/cameras.txt with your intrincsics
 sudo chmod +x run.sh
-then run the script using command: ./run.sh
+./run.sh
 ```
 
 ### 2. Triangulation (OpenMVG)
@@ -126,7 +126,7 @@ replace images/ with your images
 replace known/images.txt with your poses
 replace known/cameras.txt with your intrincsics
 sudo chmod +x run.sh
-then run the script using command: ./run.sh
+./run.sh
 ```
 
 
@@ -151,7 +151,7 @@ replace data/images with your images
 replace data/known/images.txt with your poses
 replace data/known/cameras.txt with your intrincsics
 sudo chmod +x run.sh
-then run the script using command: ./run.sh
+./run.sh
 ```
 
 ### 2. Triangulation (OpenMVG)
@@ -164,6 +164,6 @@ replace images/ with your images
 replace known/images.txt with your poses
 replace known/cameras.txt with your intrincsics
 sudo chmod +x run.sh
-then run the script using command: ./run.sh
+./run.sh
 ```
 

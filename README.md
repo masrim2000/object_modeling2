@@ -55,7 +55,7 @@ Usage:
 replace data/images with your images
 replace data/alignment.txt with your poses for images (minimum 3 poses)
 sudo chmod +x run.sh
-*then run the script using command: ./run.sh
+then run the script using command: ./run.sh
 ```
 
 
@@ -110,7 +110,7 @@ replace data/images with your images
 replace data/known/images.txt with your poses
 replace data/known/cameras.txt with your intrincsics
 sudo chmod +x run.sh
-*then run the script using command: ./run.sh
+then run the script using command: ./run.sh
 ```
 
 ### 2. Triangulation (openmvg)
@@ -123,7 +123,7 @@ replace images/ with your images
 replace known/images.txt with your poses
 replace known/cameras.txt with your intrincsics
 sudo chmod +x run.sh
-*then run the script using command: ./run.sh
+then run the script using command: ./run.sh
 ```
 
 
@@ -148,7 +148,7 @@ replace data/images with your images
 replace data/known/images.txt with your poses
 replace data/known/cameras.txt with your intrincsics
 sudo chmod +x run.sh
-*then run the script using command: ./run.sh
+then run the script using command: ./run.sh
 ```
 
 ### 2. Triangulation (openmvg)
@@ -161,19 +161,6 @@ replace images/ with your images
 replace known/images.txt with your poses
 replace known/cameras.txt with your intrincsics
 sudo chmod +x run.sh
-*then run the script using command: ./run.sh
+then run the script using command: ./run.sh
 ```
 
-
-
-
-
-***
-***This script assumes that colmap is installed and functional (i.e. the command "colmap gui" runs without errors and opens colmap gui).
-This is challenging on some distributions as it requires cuda.
-One easy way around this is to use colmap pre-installed with cuda enabled within a docker container. Given that cuda is enabled on the host machine and docker is installed and running, a functioning colmap container can be started using the following commands:**
-```
-docker pull masrim2000/colmap:latest
-docker run -it -v c:\:/mnt/c --gpus=all masrim2000/colmap:latest
-```
-***

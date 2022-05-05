@@ -66,7 +66,7 @@ TODO
 # Method 2: Registration using QR-code (using OpenMVG)
 
 <p float="left">
-<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-input.gif" width="250" height="200"/>
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-input.gif" />
 <!-- <em>20 input images</em> -->
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-detectedCorners.gif" />
 </p>

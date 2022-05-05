@@ -65,10 +65,15 @@ TODO
 
 # Method 2: Registration using QR-code (using OpenMVG)
 
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-scene.gif" />
+Scene & some cameras
 <p float="left">
-<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-input2.gif" />
-<!-- <em>20 input images</em> -->
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-input.gif" />
+<em>20 input images</em>
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-detectedCorners.gif" />
+<em>QR-code detection and corner localization</em>
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-detectionExplanation2.gif" />
+<em>World coordinates extraction</em>
 </p>
 Produces a sparse OpenMVG SfM model, registers it to the world coordinate system using a QR code with known world coordinates then performs a dense reconstruction using openMVS. Does not require camera calibration but depends on good detection and localization of a QR-code in the images.
 

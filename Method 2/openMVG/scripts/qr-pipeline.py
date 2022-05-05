@@ -61,6 +61,8 @@ for i in image_name:
     # c1_world = [0.0, 0.0, 0.0]
     # c2_world = [0.457, 0.0, 0.0]
     # c3_world = [0.0, 0.0, -0.457]
+    # QR string format: 'c1_x,c1_y,c1_z;c2_x,c2_y,c2_z;c3_x,c3_y,c3_z'
+    # e.g.: '0,0,0;0,-0.185,0;-0.185,0,0'
     qr_data_rows = val.split(";")
     for row in range(len(qr_data_rows)):
         qr_data_rows[row] = qr_data_rows[row].split(",")

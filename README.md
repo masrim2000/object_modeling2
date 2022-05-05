@@ -38,7 +38,7 @@ Produces a dense colmap SfM model and registers it to the world coordinate syste
 
 This folder contains scripts to extract the images and camera poses and formats it such that its ready to be used in the next step (images.txt or alignment.txt).
 
-Usage:
+Usage
 ```
 sudo chmod +x run.sh
 ./run.sh rita_bottle.bag images/ /usb_cam/image_raw base_link camera_link_optical
@@ -50,7 +50,7 @@ or generally,
 
 Generates a dense 3D reconstruction and registers it using the formatted output from step 1.
 
-Usage:
+Usage
 ```
 replace data/images with your images
 replace data/alignment.txt with your poses for images (minimum 3 poses)
@@ -65,7 +65,7 @@ TODO
 
 # Method 2: Registration using QR-code (using OpenMVG)
 
-Produces a sparse OpenMVG SfM model, registers it to the world coordinate system using a QR code with known world coordinates then performs a dense reconstruction using openMVS. Does not require camera calibration but depends on good detection and localization of a QR-code in the images.
+Produces a sparse OpenMVG SfM model, registers it to the world coordinate system using a QR code with known world coordinates then performs a dense reconstruction using openMVS. Requires camera calibration. The QR-code should not be too distorted in the images (due to the camera angle) for good detection and corner localization.
 
 <p float="left">
 <em>Scene & some cameras</em>
@@ -107,7 +107,7 @@ TODO
 
 This folder contains scripts to extract the images and camera poses then formats them such that they are ready to be used in the next step (images.txt).
 
-Usage:
+Usage
 ```
 sudo chmod +x run.sh
 ./run.sh rita_bottle.bag images/ /usb_cam/image_raw base_link camera_link_optical
@@ -119,7 +119,7 @@ or generally,
 
 This script generates a dense 3D reconstruction by triangulating matched SIFT features given camera poses and calibration parameters. Requires accurate poses and camera calibration.
 
-Usage:
+Usage
 ```
 replace data/images with your images
 replace data/known/images.txt with your poses
@@ -132,7 +132,7 @@ sudo chmod +x run.sh
 
 This script generates a dense 3D reconstruction by triangulating matched SIFT features given camera poses and calibration parameters. Requires accurate poses and camera calibration.
 
-Usage:
+Usage
 ```
 replace images/ with your images
 replace known/images.txt with your poses
@@ -148,7 +148,7 @@ sudo chmod +x run.sh
 
 This folder contains an example blender scene with multiple cameras, as well as the needed scripts to render and export images, camera calibration and camera poses. The output is formatted to be used directly in the next step (images.txt and cameras.txt).
 
-Usage:
+Usage
 ```
 Copy scripts to blender, change save location and run script.
 ```
@@ -157,7 +157,7 @@ Copy scripts to blender, change save location and run script.
 
 This script generates a dense 3D reconstruction by triangulating matched SIFT features given camera poses and calibration parameters. Requires accurate poses and camera calibration.
 
-Usage:
+Usage
 ```
 replace data/images with your images
 replace data/known/images.txt with your poses
@@ -170,7 +170,7 @@ sudo chmod +x run.sh
 
 This script generates a dense 3D reconstruction by triangulating matched SIFT features given camera poses and calibration parameters. Requires accurate poses and camera calibration.
 
-Usage:
+Usage
 ```
 replace images/ with your images
 replace known/images.txt with your poses

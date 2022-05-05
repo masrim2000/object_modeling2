@@ -64,6 +64,19 @@ TODO
 
 
 # Method 2: Registration using QR-code (using OpenMVG)
+
+Produces a sparse OpenMVG SfM model, registers it to the world coordinate system using a QR code with known world coordinates then performs a dense reconstruction using openMVS. Does not require camera calibration but depends on good detection and localization of a QR-code in the images.
+
+Usage:
+```
+replace images/ with your images
+replace c*_world vaiables in qr-pipeline.py with world coordinates of qr code 3 corners (top-left, top-right, bottom-left). TODO: extract this info from QR-code
+ensure path of binaries (OPENMVG_SFM_BIN) and sensor width dabatase is correct in SfM_openMVG.py
+ensure X11 server is woking by making sure export DISPLAY is correct and works (can run guis)
+then:
+./run.sh
+```
+
 <p float="left">
 <em>Scene & some cameras</em>
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-scene.jpg" />
@@ -78,17 +91,6 @@ TODO
 <em>White: obtained dense pointcloud, Blue: Ground-truth geometry</em>
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-result_vs_ground_truth.jpg" />
 </p>
-Produces a sparse OpenMVG SfM model, registers it to the world coordinate system using a QR code with known world coordinates then performs a dense reconstruction using openMVS. Does not require camera calibration but depends on good detection and localization of a QR-code in the images.
-
-Usage:
-```
-replace images/ with your images
-replace c*_world vaiables in qr-pipeline.py with world coordinates of qr code 3 corners (top-left, top-right, bottom-left). TODO: extract this info from QR-code
-ensure path of binaries (OPENMVG_SFM_BIN) and sensor width dabatase is correct in SfM_openMVG.py
-ensure X11 server is woking by making sure export DISPLAY is correct and works (can run guis)
-then:
-./run.sh
-```
 
 
 # Method 3: Triangulation

@@ -74,6 +74,13 @@ Copy scripts to blender, change save location, change fileName to "alignment" an
 
 Generates a dense 3D reconstruction and registers it using the formatted output from step 1.
 
+<p float="left">
+<!-- <em>Scene & some cameras</em>
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-scene.jpg" /> -->
+<em>20 input images</em>
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M1-synth-input.gif" />
+</p>
+
 Usage
 ```
 replace data/images with your images
@@ -81,7 +88,13 @@ replace data/alignment.txt with your poses for images (minimum 3 poses)
 sudo chmod +x run.sh
 ./run.sh
 ```
-
+**Results**
+<p>
+<em>Using the ground-control points extracted from the last step, aligning the 3D model using the customised version of openMVG yields the following dense pointcloud:</em>
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M1-synth-result.jpg" />
+<em>White: obtained dense pointcloud, Blue: ground-truth</em>
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M1-synth-result_vs_ground_truth.jpg" />
+</p>
 
 # Method 2: Registration using QR-code (using OpenMVG)
 

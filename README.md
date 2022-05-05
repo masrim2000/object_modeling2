@@ -31,9 +31,9 @@ https://github.com/masrim2000/openmvg.git
 
 Produces a dense colmap SfM model and registers it to the world coordinate system using the known camera poses. Does not require camera calibration but takes longer to compute than the other methods.
 
-__inputs__
-Markup : * Set of images
-Markup : * Camera centre translation
+**Inputs**
+* Set of images
+* Camera centre translation
 
 ## Real data (ros bag)
 
@@ -116,9 +116,9 @@ sudo chmod +x run.sh
 
 Produces a sparse OpenMVG SfM model, registers it to the world coordinate system using a QR code with known world coordinates then performs a dense reconstruction using openMVS. Requires camera calibration. The QR-code should not be too distorted in the images (due to the camera angle) for good detection and corner localization.
 
-__inputs__
-Markup : * Set of images containing a QR code encoding the world coordinate position of 3 of its corners
-Markup : * Camera calibration
+**Inputs**
+* Set of images containing a QR code encoding the world coordinate position of 3 of its corners
+* Camera calibration
 
 <p float="left">
 <em>Scene & some cameras</em>
@@ -152,10 +152,10 @@ then:
 
 This method generates a dense 3D reconstruction by triangulating matched SIFT features given camera poses and calibration parameters. Requires accurate poses and camera calibration.
 
-__inputs__
-Markup : * Set of images
-Markup : * Camera poses
-Markup : * Camera calibration
+**Inputs**
+* Set of images
+* Camera poses
+* Camera calibration
 
 ## Real data (ros bag)
 

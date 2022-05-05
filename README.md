@@ -50,6 +50,13 @@ or generally,
 
 Generates a dense 3D reconstruction and registers it using the formatted output from step 1.
 
+<p float="left">
+<!-- <em>Scene & some cameras</em>
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-scene.jpg" /> -->
+<em>47 input images</em>
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M1-real-input.gif" />
+</p>
+
 Usage
 ```
 replace data/images with your images
@@ -57,7 +64,13 @@ replace data/alignment.txt with your poses for images (minimum 3 poses)
 sudo chmod +x run.sh
 ./run.sh
 ```
-
+**Results**
+<p>
+<em>Using the camera poses extracted from the last step, aligning the 3D model using colmap yields the following dense pointcloud:</em>
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M1-real-result.jpg" />
+<em>Height measurement reads 22.465 cm, ground truth is 22.5 cm</em>
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M1-real-result_measurement.jpg" />
+</p>
 
 ## Synthetic data (blender)
 
@@ -90,7 +103,7 @@ sudo chmod +x run.sh
 ```
 **Results**
 <p>
-<em>Using the ground-control points extracted from the last step, aligning the 3D model using the customised version of openMVG yields the following dense pointcloud:</em>
+<em>Using the camera poses extracted from the last step, aligning the 3D model using colmap yields the following dense pointcloud:</em>
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M1-synth-result.jpg" />
 <em>White: obtained dense pointcloud, Blue: ground-truth</em>
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M1-synth-result_vs_ground_truth.jpg" />

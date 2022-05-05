@@ -88,9 +88,9 @@ then:
 ```
 Results
 <p>
-<em>Using the ground-control points extracted from the last step, aligning the 3D model using the customised version of openMVG yields the following results.</em>
+<em>Using the ground-control points extracted from the last step, aligning the 3D model using the customised version of openMVG yields the following dense pointcloud:</em>
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-result.jpg" />
-<em>White: obtained dense pointcloud, Blue: Ground-truth geometry</em>
+<em>White: obtained dense pointcloud, Blue: Ground-truth</em>
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-result_vs_ground_truth.jpg" />
 </p>
 

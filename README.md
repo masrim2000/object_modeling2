@@ -78,7 +78,7 @@ Produces a sparse OpenMVG SfM model, registers it to the world coordinate system
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-detectionExplanation.jpg" />
 </p>
 
-Usage:
+Usage
 ```
 replace images/ with your images
 ensure path of binaries (OPENMVG_SFM_BIN) and sensor width dabatase is correct in SfM_openMVG.py

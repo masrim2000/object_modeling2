@@ -69,10 +69,13 @@ TODO
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-scene.jpg" />
 <em>20 input images</em>
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-input.gif" />
-<em>QR-code detection and corner localization</em>
+<em>Automatic QR-code detection and corner localization</em>
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-detectedCorners.gif" />
 <em>World coordinates extraction</em>
-<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-detectionExplanation2.jpg" />
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-detectionExplanation.jpg" />
+<em>Using the ground-control points extracted from the last step, aligning the 3D model using the customised version of openMVG yields the following results.
+White: obtained dense pointcloud, Blue: Ground-truth geometry</em>
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-result_vs_ground_truth.jpg" />
 </p>
 Produces a sparse OpenMVG SfM model, registers it to the world coordinate system using a QR code with known world coordinates then performs a dense reconstruction using openMVS. Does not require camera calibration but depends on good detection and localization of a QR-code in the images.
 

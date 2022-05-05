@@ -61,10 +61,10 @@ for i in range(1, len(cameras_obj)+1):
     # For alignment.txt
     if fileName=="alignment":
         image = " ".join([
-        ''.join([get_position_details_json(ob)["name"],".jpg"]),
-        str(get_position_details_json(ob)["x_pos"]),
-        str(get_position_details_json(ob)["y_pos"]),
-        str(get_position_details_json(ob)["z_pos"])
+        ''.join([ob.name,".jpg"]),
+        str(ob.matrix_world[0][3]),
+        str(ob.matrix_world[1][3]),
+        str(ob.matrix_world[2][3])
         ])
         
     images.append(image)

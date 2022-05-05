@@ -67,16 +67,6 @@ TODO
 
 Produces a sparse OpenMVG SfM model, registers it to the world coordinate system using a QR code with known world coordinates then performs a dense reconstruction using openMVS. Does not require camera calibration but depends on good detection and localization of a QR-code in the images.
 
-Usage:
-```
-replace images/ with your images
-replace c*_world vaiables in qr-pipeline.py with world coordinates of qr code 3 corners (top-left, top-right, bottom-left). TODO: extract this info from QR-code
-ensure path of binaries (OPENMVG_SFM_BIN) and sensor width dabatase is correct in SfM_openMVG.py
-ensure X11 server is woking by making sure export DISPLAY is correct and works (can run guis)
-then:
-./run.sh
-```
-
 <p float="left">
 <em>Scene & some cameras</em>
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-scene.jpg" />
@@ -86,6 +76,18 @@ then:
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-detectedCorners.gif" />
 <em>World coordinates extraction</em>
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-detectionExplanation.jpg" />
+</p>
+
+Usage:
+```
+replace images/ with your images
+ensure path of binaries (OPENMVG_SFM_BIN) and sensor width dabatase is correct in SfM_openMVG.py
+ensure X11 server is woking by making sure export DISPLAY is correct and works (can run guis)
+then:
+./run.sh
+```
+Results
+<p>
 <em>Using the ground-control points extracted from the last step, aligning the 3D model using the customised version of openMVG yields the following results.</em>
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-result.jpg" />
 <em>White: obtained dense pointcloud, Blue: Ground-truth geometry</em>

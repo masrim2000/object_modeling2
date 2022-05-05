@@ -86,11 +86,11 @@ ensure X11 server is woking by making sure export DISPLAY is correct and works (
 then:
 ./run.sh
 ```
-Results
+**Results**
 <p>
 <em>Using the ground-control points extracted from the last step, aligning the 3D model using the customised version of openMVG yields the following dense pointcloud:</em>
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-result.jpg" />
-<em>White: obtained dense pointcloud, Blue: Ground-truth</em>
+<em>White: obtained dense pointcloud, Blue: ground-truth</em>
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-result_vs_ground_truth.jpg" />
 </p>
 

@@ -55,12 +55,32 @@ Usage
 replace data/images with your images
 replace data/alignment.txt with your poses for images (minimum 3 poses)
 sudo chmod +x run.sh
-then run the script using command: ./run.sh
+./run.sh
 ```
 
 
 ## Synthetic data (blender)
-TODO
+
+### 1. Extract images and camera poses
+
+This folder contains an example blender scene with multiple cameras, as well as the needed scripts to render and export images and camera poses. The output is formatted to be used directly in the next step (alignment.txt).
+
+Usage
+```
+Copy scripts to blender, change save location, change fileName to "alignment" and run script.
+```
+
+### 2. Dense reconstruction and registration
+
+Generates a dense 3D reconstruction and registers it using the formatted output from step 1.
+
+Usage
+```
+replace data/images with your images
+replace data/alignment.txt with your poses for images (minimum 3 poses)
+sudo chmod +x run.sh
+./run.sh
+```
 
 
 # Method 2: Registration using QR-code (using OpenMVG)

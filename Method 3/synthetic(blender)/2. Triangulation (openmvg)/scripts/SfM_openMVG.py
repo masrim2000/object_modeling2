@@ -12,7 +12,7 @@ OPENMVG_SFM_BIN = "/usr/local/bin/"
 
 # Indicate the openMVG camera sensor width directory
 # CAMERA_SENSOR_WIDTH_DIRECTORY = "/home/masri/openMVG/src/software/SfM" + "/../../openMVG/exif/sensor_width_database"
-CAMERA_SENSOR_WIDTH_DIRECTORY = "/opt/OpenMVG/src/openMVG/exif/sensor_width_database/sensor_width_camera_database.txt"
+CAMERA_SENSOR_WIDTH_DIRECTORY = "/opt/OpenMVG/src/openMVG/exif/sensor_width_database"
 
 import os
 import subprocess

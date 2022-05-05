@@ -12,7 +12,7 @@ OPENMVG_SFM_BIN = "/usr/local/bin/"
 
 # Indicate the openMVG camera sensor width directory
 # CAMERA_SENSOR_WIDTH_DIRECTORY = "/home/masri/openMVG/src/software/SfM" + "/../../openMVG/exif/sensor_width_database"
-CAMERA_SENSOR_WIDTH_DIRECTORY = "/opt/OpenMVG/src/openMVG/exif/sensor_width_database/sensor_width_camera_database.txt"
+CAMERA_SENSOR_WIDTH_DIRECTORY = "/opt/OpenMVG/src/openMVG/exif/sensor_width_database"
 
 import os
 import subprocess
@@ -29,7 +29,7 @@ input_eval_dir = os.path.abspath("../")
 #   pImageDataCheckout = subprocess.Popen([ "git", "clone", "https://github.com/openMVG/ImageDataset_SceauxCastle.git" ])
 #   pImageDataCheckout.wait()
 
-output_eval_dir = os.path.join(input_eval_dir, "out")
+output_eval_dir = os.path.join(input_eval_dir, "MVG")
 input_eval_dir = os.path.join(input_eval_dir, "images")
 if not os.path.exists(output_eval_dir):
   os.mkdir(output_eval_dir)
@@ -48,7 +48,7 @@ if not os.path.exists(matches_dir):
 
 
 print ("1. Intrinsics analysis")
-pIntrisics = subprocess.Popen( [os.path.join(OPENMVG_SFM_BIN, "openMVG_main_SfMInit_ImageListing"),  "-i", input_dir, "-o", matches_dir, "-d", camera_file_params, "-c", "1"] )
+pIntrisics = subprocess.Popen( [os.path.join(OPENMVG_SFM_BIN, "openMVG_main_SfMInit_ImageListing"),  "-i", input_dir, "-o", matches_dir, "-d", camera_file_params, "-c", "1", "-k", "2666.6667;0;960.0;0;2250.0;540.0;0;0;1"] )
 pIntrisics.wait()
 
 print ("2. Compute features")

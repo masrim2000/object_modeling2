@@ -6,7 +6,7 @@ python3 scripts/SfM_openMVG.py
 
 # convert output sfm_data.bin file to .json
 echo "2. Converting Reconstruction Results to json..."
-openMVG_main_ConvertSfM_DataFormat -i ./out/reconstruction_sequential/sfm_data.bin -o ./sfm_data.json
+openMVG_main_ConvertSfM_DataFormat -i ./MVG/reconstruction_sequential/sfm_data.bin -o ./sfm_data.json
 
 echo "3. Extracting QR Corners to gcp.txt..."
 shopt -s expand_aliases

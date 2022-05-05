@@ -22,7 +22,7 @@ for i in image_name:
         # cv2.rectangle(image, (x,y), (x+w,y+h), (255,0,0), 5)
         print("location: ", obj.rect, "\n")
     if 'y' not in vars():
-        print("ERROR: zbar was unable to detect QR code")
+        print(str(i), ": ERROR: zbar was unable to detect QR code")
         continue
 
     paddingSize = 10
@@ -34,7 +34,7 @@ for i in image_name:
     val, pts, st_code=det.detectAndDecode(image_cropped)
 
     if pts is None:
-        print("ERROR: OpenCV was unable to detect QR code")
+        print(str(i), "ERROR: OpenCV was unable to detect QR code")
         continue
 
     corners = [[pts[0][0][0], pts[0][0][1]], [pts[0][1][0], pts[0][1][1]], [pts[0][3][0], pts[0][3][1]], [pts[0][2][0], pts[0][2][1]]]
@@ -44,24 +44,30 @@ for i in image_name:
     c3 = (-paddingSize+x+int(round(corners[2][0])),-paddingSize+y+int(round(corners[2][1])))
 
 
-    cv2.circle(image, c1, 8, (255,255,255), -1)
+    cv2.circle(image, c1, 9, (255,255,255), -1)
     cv2.circle(image, c1, 6, (0,0,255), -1)
 
-    cv2.circle(image, c2, 8, (255,255,255), -1)
+    cv2.circle(image, c2, 9, (255,255,255), -1)
     cv2.circle(image, c2, 6, (0,255,0), -1)
 
-    cv2.circle(image, c3, 8, (255,255,255), -1)
+    cv2.circle(image, c3, 9, (255,255,255), -1)
     cv2.circle(image, c3, 6, (255,0,0), -1)
 
     write_img_path = ''.join([i[:len(i)-4], '-cornersDetected.jpg'])
-    write_img_path = os.path.join(sys.path[0],write_img_path)
+    write_img_path = os.path.join(sys.path[0], "../", write_img_path)
     cv2.imwrite(write_img_path, image)
 
     #           [X, Y, Z]
-    c1_world = [0.0, 0.0, 0.0]
-    c2_world = [0.457, 0.0, 0.0]
-    c3_world = [0.0, 0.0, -0.457]
-    #TODO: Make world coordinates encoded in QR code and extracted here
+    # c1_world = [0.0, 0.0, 0.0]
+    # c2_world = [0.457, 0.0, 0.0]
+    # c3_world = [0.0, 0.0, -0.457]
+    qr_data_rows = val.split(";")
+    for row in range(len(qr_data_rows)):
+        qr_data_rows[row] = qr_data_rows[row].split(",")
+        qr_data_rows[row] = [float(x) for x in qr_data_rows[row]]
+    c1_world = qr_data_rows[0]
+    c2_world = qr_data_rows[1]
+    c3_world = qr_data_rows[2]
 
     
     # points = [img_name, pointX, pointY, xVal, yVal, zVal]
@@ -87,21 +93,25 @@ for i in range(len(gcpTxt)):
     for j in range(1, len(gcpTxt[0])):
         gcpTxt[i][j] = float(gcpTxt[i][j])
 
-coords_sum = []
+coords = []
 myorder = []
 for row in gcpTxt:
-    coords_sum.append(sum([float(x) for x in row[3:]]))
-no_of_unique_coords = len(set(coords_sum))
+    coords.append(str(row[3]) + str(row[4]) + str(row[5]))
+no_of_unique_coords = len(set(coords))
+
 for i in range(no_of_unique_coords):
-    myorder.append(i)
-    myorder.append(coords_sum.index(coords_sum[i], i+2))
+    obs_per_point = sum([1 for x in coords if x==list(set(coords))[i]])
+    for obs in range(obs_per_point):
+        myorder.append(coords.index(coords[i], i+obs*no_of_unique_coords))
 gcpTxt = [gcpTxt[i] for i in myorder]
+
 
 # print(myorder)
 
 
 f = open(os.path.join(sys.path[0], "../gcp.txt"), "w")
-
+print("# [img_name, pointX, pointY, xVal, yVal, zVal]",
+file=f)
 for row in gcpTxt:
     print(row[0],row[1],row[2],row[3],row[4],row[5], sep=' ', end='\n', file=f)
 f.close()

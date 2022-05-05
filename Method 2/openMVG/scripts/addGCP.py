@@ -45,31 +45,32 @@ def column(matrix, i):
 f = open(os.path.join(sys.path[0], "temp.txt"), "w")
 
 print("""\"control_points\": [\n""", sep='', end='', file=f)
-coords_sum = []
+coords = []
 for row in point_list:
-    coords_sum.append(sum([float(x) for x in row[3:]]))
+    # coords_sum.append(sum([float(x) for x in row[3:]]))
+    coords.append(str(row[3]) + str(row[4]) + str(row[5]))
 
-no_of_unique_coords = len(set(coords_sum))
+no_of_unique_coords = len(set(coords))
 
 for i in range(no_of_unique_coords):
+    obs_per_point = sum([1 for x in coords if x==list(set(coords))[i]])
     print("""        {
             \"key\": """, i, """,
             \"value\": {
                 \"X\": [
-                    """, point_list[i*2][3], """,
-                    """, point_list[i*2][4], """,
-                    """, point_list[i*2][5], """
+                    """, point_list[i*obs_per_point][3], """,
+                    """, point_list[i*obs_per_point][4], """,
+                    """, point_list[i*obs_per_point][5], """
                 ],
                 \"observations\": [\n""", sep='', end='', file=f)
-    obs_per_point = sum([1 for x in coords_sum if x==list(set(coords_sum))[i]])
     for obs in range(obs_per_point):
         print("""                    {
-                        "key": """, int(key_name[0][int(key_name[1].index(point_list[i*2+obs][0]))]), """,
+                        "key": """, int(key_name[0][int(key_name[1].index(point_list[i*obs_per_point+obs][0]))]), """,
                         "value": {
                             "id_feat": 0,
                             "x": [
-                                """, point_list[i*2+obs][1], """,
-                                """, point_list[i*2+obs][2], """
+                                """, point_list[i*obs_per_point+obs][1], """,
+                                """, point_list[i*obs_per_point+obs][2], """
                             ]
                         }
                     }""", sep='', end='', file=f)

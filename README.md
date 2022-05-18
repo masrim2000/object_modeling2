@@ -53,7 +53,7 @@ or generally,
 
 Generates a dense 3D reconstruction and registers it using the formatted output from step 1.
 
-<p float="left">
+<p>
 <!-- <em>Scene & some cameras</em>
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M2-synth-scene.jpg" /> -->
 <em>47 input images</em>

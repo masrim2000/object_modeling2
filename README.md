@@ -246,8 +246,8 @@ sudo chmod +x run.sh
 **Results**
 <p>
 <em>Using the camera poses extracted from the last step, aligning the 3D model using openMVG yields the following dense pointcloud:</em>
-<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M1-synth-result.jpg" />
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M3-synth-mvg-result.jpg" />
 <em>White: obtained dense pointcloud, Blue: ground-truth</em>
-<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M1-synth-result_vs_ground_truth.jpg" />
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M3-synth-mvg-result_vs_ground_truth.jpg" />
 </p>
 

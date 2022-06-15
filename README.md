@@ -213,16 +213,8 @@ Copy scripts to blender, change save location, change fileName to "images" and r
 
 ### 2. Triangulation (colmap) - (work in progress)
 
-This script generates a dense 3D reconstruction by triangulating matched SIFT features given camera poses and calibration parameters. Requires accurate poses and camera calibration.
+...
 
-Usage
-```
-replace data/images with your images
-replace data/known/images.txt with your poses
-replace data/known/cameras.txt with your intrincsics
-sudo chmod +x run.sh
-./run.sh
-```
 
 ### 2. Triangulation (OpenMVG)
 

@@ -208,10 +208,10 @@ This folder contains an example blender scene with multiple cameras, as well as 
 
 Usage
 ```
-Copy scripts to blender, change save location and run script.
-```
+Copy scripts to blender, change save location, change fileName to "images" and run script.
+``````
 
-### 2. Triangulation (colmap)
+### 2. Triangulation (colmap) - (work in progress)
 
 This script generates a dense 3D reconstruction by triangulating matched SIFT features given camera poses and calibration parameters. Requires accurate poses and camera calibration.
 
@@ -228,12 +228,26 @@ sudo chmod +x run.sh
 
 This script generates a dense 3D reconstruction by triangulating matched SIFT features given camera poses and calibration parameters. Requires accurate poses and camera calibration.
 
+<p float="left">
+<!-- <em>Scene & some cameras</em>
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M3-synth-scene.jpg" /> -->
+<em>20 input images</em>
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M3-synth-input.gif" />
+</p>
+
 Usage
 ```
 replace images/ with your images
-replace known/images.txt with your poses
-replace known/cameras.txt with your intrincsics
+replace known/images.txt with your poses for the images
+replace known/cameras.txt with your camera calibration
 sudo chmod +x run.sh
 ./run.sh
 ```
+**Results**
+<p>
+<em>Using the camera poses extracted from the last step, aligning the 3D model using openMVG yields the following dense pointcloud:</em>
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M1-synth-result.jpg" />
+<em>White: obtained dense pointcloud, Blue: ground-truth</em>
+<img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M1-synth-result_vs_ground_truth.jpg" />
+</p>
 

@@ -159,8 +159,11 @@ This method generates a dense 3D reconstruction by triangulating matched SIFT fe
 
 ## Real data (ros bag)
 
-TODO
+TODO (work in progress, data needed)
 
+...
+
+<!---
 ### 1. Extract images and poses
 
 This folder contains scripts to extract the images and camera poses then formats them such that they are ready to be used in the next step (images.txt).
@@ -198,7 +201,7 @@ replace known/cameras.txt with your intrincsics
 sudo chmod +x run.sh
 ./run.sh
 ```
-
+--->
 
 ## Synthetic data (blender)
 

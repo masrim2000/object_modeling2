@@ -71,7 +71,7 @@ sudo chmod +x run.sh
 <p>
 <em>Using the camera poses extracted from the last step, aligning the 3D model using colmap yields the following dense pointcloud:</em>
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M1-real-result.jpg" />
-<em>Height measurement reads 22.465 cm, ground truth is 22.5 cm</em>
+<b><em>Height measurement reads 22.465 cm, ground truth is 22.5 cm</em></b>
 <img src="https://github.com/masrim2000/object_modeling2/blob/master/images/M1-real-result_measurement.jpg" />
 </p>
 
